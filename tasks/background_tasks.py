@@ -45,7 +45,7 @@ celery_app.conf.routes = {
 
 logger = get_task_logger(__name__)
 
-@celery_app.task(name="tasks.process_documents")
+@celery_app.task(name="tasks.background_tasks.process_documents")
 def process_documents(process_id: str, document_ids: List[str]):
     """Background task to process uploaded documents"""
     db = SessionLocal()
